@@ -1,0 +1,111 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex : 1;
+}
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link {
+    color: #222222;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    height: 5rem;
+    z-index: 2;
+}
+
+.f-info {
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.f-link a {
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-link a:hover {
+    text-decoration: underline;
+    color: #222222;
+}
+
+.f-social-info i {
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.card {
+    border: none;
+    margin-bottom: 2rem;
+}
+
+.card-img-top {
+    border-radius: 1rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-text {
+    font-weight: 400;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.cardLink{
+   text-decoration: none;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+.btn-dark{
+    background-color: #fe424d;
+    border: none;
+}
+.show-img{
+    height: 30vh;
+    border-radius: 1.2rem;
+}
+.btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.show-Listing{
+    padding: 0;
+    margin: 0;
+}
+@media (max-width: 1200px){
+    .listing-page .wrap-List{
+       display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .listing-page .card{
+        width: 100%;
+    }
+}
+@media (max-width: 770px){
+    .show-page .btns{
+       flex-direction: column;
+       gap: 1.2rem;
+    }
+}
+  /* &#x20b9;<%=listing.price.toLocaleString("en-IN")%> */
