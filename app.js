@@ -1,7 +1,8 @@
 if (process.env.NODE_ENV != "production") {
     require('dotenv').config();
 }
-console.log(process.env.CLOUD_NAME);
+// console.log(process.env.CLOUD_NAME);
+// console.log(process.env.MAP_TOKEN);
 
 const express = require("express");
 const app = express();
@@ -18,6 +19,8 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
 const User = require("./Models/user.js");
+const apiKeyRoute = require("./routes/listing.js");
+
 
 
 const mongooseUrl = "mongodb://127.0.0.1:27017/wanderlust";
@@ -73,11 +76,6 @@ app.use("/listings/:id/review", reviewRouter);
 //Sign Up
 app.use("/", userRouter);
 
-//Home route
-app.get("/", (req, res) => {
-    res.send("Working...");
-})
-
 // for all other routs
 app.all("*", (req, res, next) => {
     next(new expressError(404, "Page not found"));
@@ -96,6 +94,9 @@ app.use((err, req, res, next) => {
     let { statusCode = 500, message = "Something went wrong!" } = err;
     res.status(statusCode).render("error.ejs", { message });
 })
+
+//map
+// app.use("/apikey", apiKeyRoute);
 
 app.listen(8080, () => {
     console.log("Listening");

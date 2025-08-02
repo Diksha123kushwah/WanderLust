@@ -1,4 +1,8 @@
 <% layout("/layouts/boilerplate") %>
+    <script>
+        console.log("<%=process.env.MAP_TOKEN%>");
+        let Access_Token = "<%=process.env.MAP_TOKEN%>";
+    </script>
 
     <body class="show-page">
         <div class="row mt-4 mt-2 show-Listing">
@@ -6,7 +10,7 @@
                 <%=listing.title %>
             </h2>
             <div class="card col-6 offset-3">
-                <img class="show-img" src="<%=listing.image%>" alt="Listing_Img">
+                <img class="show-img" src="<%=listing.image.url%>" alt="Listing_Img">
                 <div class="card-body">
                     <div class="card-text mb-2">
                         <i>Owned By <%=listing.owner.username %> </i><br>
@@ -26,10 +30,9 @@
                         </div>
                         <%}%>
                 </div>
-
             </div>
-            <hr>
             <% if(curr){%>
+                <hr>
                 <div class="offset-3 col-8 mb-3">
                     <h4>Leave a Review</h4>
                     <form action="/listings/<%=listing._id%>/review" method="post" novalidate class="needs-validation">
@@ -62,31 +65,43 @@
                         </div>
                     </form>
                 </div>
-                <hr>
                 <%}%>
-                    <div class="offset-3 col-8 mb-3">
-                        <h4>All Reviews</h4>
-                        <div class="row">
-                            <% for(review of listing.reviews){%>
-                                <div class="card col-5 mb-3 ms-3" style="border:1px solid rgba(0, 0, 0, 0.144);">
-                                    <div class="card-body">
-                                        <h5 class="card-title">@<%=review.author.username%>
-                                        </h5>
-                                        <p class="starability-result card-text" data-rating="<%=review.rating%>"></p>
-                                        <p class="card-text">
-                                            <%=review.comment %>
-                                        </p>
-                                        <form action="/listings/<%=listing._id%>/review/<%=review._id%>?_method=DELETE"
-                                            method="post">
-                                            <button class="btn btn-outline-danger">Delete</button>
-                                        </form>
-                                    </div>
-                                </div>
 
-                                <%}%>
+                    <%if(listing.reviews.length> 0){%>
+                        <hr>
+                        <div class="offset-3 col-8 mb-3">
+                            <h4>All Reviews</h4>
+                            <div class="row">
+                                <% for(review of listing.reviews){%>
+                                    <div class="card col-5 mb-3 ms-3" style="border:1px solid rgba(0, 0, 0, 0.144);">
+                                        <div class="card-body">
+                                            <h5 class="card-title">@<%=review.author.username%>
+                                            </h5>
+                                            <p class="starability-result card-text" data-rating="<%=review.rating%>">
+                                            </p>
+                                            <p class="card-text">
+                                                <%=review.comment %>
+                                            </p>
+                                            <form
+                                                action="/listings/<%=listing._id%>/review/<%=review._id%>?_method=DELETE"
+                                                method="post">
+                                                <button class="btn btn-outline-danger">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <%}%>
+                            </div>
                         </div>
-                    </div>
+                        <%}%>
+
+                            <hr>
+                            <div class="offset-3 col-8 mb-3">
+                                <h4>Where you'll be</h4>
+                                <div id="map"></div>
+                            </div>
         </div>
+        <script src="/js/map.js"></script>
     </body>
 
     </html>

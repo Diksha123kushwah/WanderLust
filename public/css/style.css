@@ -92,6 +92,13 @@ body{
     padding: 0;
     margin: 0;
 }
+
+/* MAP */
+#map{
+    height: 400px;
+    width: 85vh;
+}
+
 @media (max-width: 1200px){
     .listing-page .wrap-List{
        display: grid;
@@ -109,3 +116,4 @@ body{
     }
 }
   /* &#x20b9;<%=listing.price.toLocaleString("en-IN")%> */
+
