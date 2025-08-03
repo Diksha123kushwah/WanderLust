@@ -1,7 +1,8 @@
 <% layout("/layouts/boilerplate") %>
     <script>
-        console.log("<%=process.env.MAP_TOKEN%>");
         let Access_Token = "<%=process.env.MAP_TOKEN%>";
+        let coordinatesL = <%-JSON.stringify(listing.geometry.coordinates)%>;
+        let locationInfo = <%-JSON.stringify(listing.location)%>;
     </script>
 
     <body class="show-page">
@@ -85,7 +86,9 @@
                                             <form
                                                 action="/listings/<%=listing._id%>/review/<%=review._id%>?_method=DELETE"
                                                 method="post">
-                                                <button class="btn btn-outline-danger">Delete</button>
+                                                <% if(curr && curr._id.equals(review.author._id)){%>
+                                                    <button class="btn btn-outline-danger">Delete</button>
+                                                    <%}%>
                                             </form>
                                         </div>
                                     </div>

@@ -6,7 +6,13 @@ const listingSchema = Joi.object({
          image:Joi.string().allow("",null),
          price:Joi.number().required().min(0),
          location:Joi.string().required(),
-         country:Joi.string().required()
+         country:Joi.string().required(),
+         category: Joi.string().valid(
+            "Trending Now", "Beachfront", "Lakefront", "Tiny Homes", "Luxury Villas",
+            "Private Rooms", "City Getaways", "Scenic Views", "Farm Stays", "WOW Homes",
+            "Mountain Retreats", "Camping & Glamping", "Nature Escapes", "Affordable Stays",
+            "Family Friendly", "Architectural Gems"
+        ).required()
     }).required()
 });
 

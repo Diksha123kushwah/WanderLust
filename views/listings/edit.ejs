@@ -47,6 +47,28 @@
                             value="<%=listing.location%>" required>
                         <div class="invalid-feedback">Location should be valid</div>
                     </div>
+                    <div class="mb-5">
+                        <label for="form-category" class="form-label">Choose a category:</label>
+                        <select id="form-category" name="Listing[category]" class="form-control" required>
+                            <option value="<%=listing.category%>"><%=listing.category%></option>
+                            <option value="Trending Now">Trending Now</option>
+                            <option value="Beachfront">Beachfront</option>
+                            <option value="Lakefront">Lakefront</option>
+                            <option value="Tiny Homes">Tiny Homes</option>
+                            <option value="Luxury Villas">Luxury Villas</option>
+                            <option value="Private Rooms">Private Rooms</option>
+                            <option value="City Getaways">City Getaways</option>
+                            <option value="Scenic Views">Scenic Views</option>
+                            <option value="Farm Stays">Farm Stays</option>
+                            <option value="WOW Homes">WOW Homes</option>
+                            <option value="Mountain Retreats">Mountain Retreats</option>
+                            <option value="Camping & Glamping">Camping & Glamping</option>
+                            <option value="Nature Escapes">Nature Escapes</option>
+                            <option value="Affordable Stays">Affordable Stays</option>
+                            <option value="Family Friendly">Family Friendly</option>
+                            <option value="Architectural Gems">Architectural Gems</option>
+                        </select>
+                    </div>
                     <button class="btn btn-dark mb-4">Edit</button>
 
                 </form>

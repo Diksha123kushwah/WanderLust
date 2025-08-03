@@ -15,6 +15,9 @@ router
 // Create Listing Route
 router.get("/new", isLoggedIn, listingController.createNewListing)
 
+//Filters
+router.get("/category/:categoryName", wrapAsync(listingController.filterListing));
+
 router
     .route("/:id")
     .get(wrapAsync(listingController.showListing))

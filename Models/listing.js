@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Review = require("./review.js");
 const { listingSchema } = require("../Schema");
+// const { coordinates } = require("@maptiler/sdk");
+const { required } = require("joi");
 listSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -10,8 +12,8 @@ listSchema = new mongoose.Schema({
         type: String,
     },
     image: {
-        url : String,
-        filename : String
+        url: String,
+        filename: String
     },
     price: {
         type: Number,
@@ -33,6 +35,26 @@ listSchema = new mongoose.Schema({
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
+    },
+    geometry: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            required: true
+        },
+        coordinates: {
+            type: [Number],
+            required: true
+        }
+    },
+    category: {
+        type: String,
+        enum: [
+            "Trending Now", "Beachfront", "Lakefront", "Tiny Homes", "Luxury Villas",
+            "Private Rooms", "City Getaways", "Scenic Views", "Farm Stays", "WOW Homes",
+            "Mountain Retreats", "Camping & Glamping", "Nature Escapes", "Affordable Stays", "Family Friendly", "Architectural Gems"
+        ],
+        required: true
     }
 })
 listSchema.post("findOneAndDelete", async (listing) => {
