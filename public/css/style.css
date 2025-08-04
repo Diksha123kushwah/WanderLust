@@ -1,12 +1,14 @@
-body{
+body {
     font-family: "Plus Jakarta Sans", sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.container{
-    flex : 1;
+
+.container {
+    flex: 1;
 }
+
 .fa-compass {
     color: #fe424d;
     font-size: 2rem;
@@ -49,6 +51,11 @@ body{
     margin-right: 0.5rem;
 }
 
+.social-info {
+    text-decoration: none;
+    color: #222222;
+}
+
 .card {
     border: none;
     margin-bottom: 2rem;
@@ -64,56 +71,92 @@ body{
     font-weight: 400;
     font-family: "Plus Jakarta Sans", sans-serif;
 }
-.cardLink{
-   text-decoration: none;
+
+.cardLink {
+    text-decoration: none;
 }
-.card-img-overlay{
+
+.card-img-overlay {
     opacity: 0;
 }
-.card-img-overlay:hover{
+
+.card-img-overlay:hover {
     opacity: 0.2;
     background-color: white;
 }
-.btn-dark{
+
+.btn-dark {
     background-color: #fe424d;
     border: none;
 }
-.show-img{
+
+.show-img {
     height: 30vh;
     border-radius: 1.2rem;
 }
-.btns{
+
+.btns {
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
 }
-.show-Listing{
+
+.show-Listing {
     padding: 0;
     margin: 0;
 }
 
 /* MAP */
-#map{
+#map {
     height: 400px;
     width: 85vh;
 }
 
-@media (max-width: 1200px){
-    .listing-page .wrap-List{
-       display: grid;
+.btn-search {
+    background-color: #fe424d;
+    color: white;
+    margin: 0 1rem 0 1rem;
+}
+
+.btn-search i {
+    display: inline;
+    margin-right: 0.6rem;
+}
+
+.btn-search:hover {
+    background-color: #fe424d;
+    color: white;
+}
+
+.search input {
+    max-width: 30rem;
+}
+
+@media (max-width: 768px) {
+    .search input {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .listing-page .wrap-List {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
-    .listing-page .card{
+
+    .listing-page .card {
         width: 100%;
     }
 }
-@media (max-width: 770px){
-    .show-page .btns{
-       flex-direction: column;
-       gap: 1.2rem;
+
+@media (max-width: 770px) {
+    .show-page .btns {
+        flex-direction: column;
+        gap: 1.2rem;
     }
 }
-  /* &#x20b9;<%=listing.price.toLocaleString("en-IN")%> */
 
+/* &#x20b9;<%=listing.price.toLocaleString("en-IN")%> */

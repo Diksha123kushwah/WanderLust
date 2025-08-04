@@ -30,7 +30,7 @@ const sessionOptions = {
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: Date(Date().now + 7 * 24 * 60 * 60 * 1000),
+        expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
         maxAge: 7 * 24 * 60 * 60 * 1000,
         httpOnly: true
     }
@@ -76,6 +76,11 @@ app.use("/listings/:id/review", reviewRouter);
 //Sign Up
 app.use("/", userRouter);
 
+//due to error 
+app.use("/.well-known", (req, res) => {
+    res.status(204).end(); // No Content
+});
+
 // for all other routs
 app.all("*", (req, res, next) => {
     next(new expressError(404, "Page not found"));
@@ -95,8 +100,6 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs", { message });
 })
 
-//map
-// app.use("/apikey", apiKeyRoute);
 
 app.listen(8080, () => {
     console.log("Listening");

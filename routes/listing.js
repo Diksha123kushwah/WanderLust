@@ -18,6 +18,10 @@ router.get("/new", isLoggedIn, listingController.createNewListing)
 //Filters
 router.get("/category/:categoryName", wrapAsync(listingController.filterListing));
 
+//Search 
+router.get("/search", wrapAsync(listingController.searchListing));
+
+
 router
     .route("/:id")
     .get(wrapAsync(listingController.showListing))

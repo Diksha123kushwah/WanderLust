@@ -30,7 +30,7 @@ module.exports.postDataToDatabase = async (req, res) => {
     newListing.owner = req.user._id;
     newListing.image = { url, filename };
 
-    //Geocoding code here
+    //Geocoding code
     const query = newListing.location;
     const URL = `https://api.maptiler.com/geocoding/${encodeURIComponent(query)}.json?key=${apiKey}`;
     try {
@@ -60,7 +60,27 @@ module.exports.filterListing = async (req, res) => {
         return res.redirect("/listings");
     }
     res.render("listings/index.ejs", { allListings, category: categoryName });
+}
 
+//Search
+module.exports.searchListing = async (req, res) => {
+    let { q } = req.query;
+    let searchRegex = new RegExp(q, "i");
+
+    let allListings = await Listing.find({
+        $or: [
+            { title: searchRegex },
+            { location: searchRegex },
+            { country: searchRegex },
+            { category: searchRegex },
+            { price: isNaN(q) ? -1 : parseInt(q) } // only match price if number
+        ]
+    });
+    if (!allListings || allListings.length === 0) {
+        req.flash("error", `No listings found for "${q}".`);
+        return res.redirect("/listings");
+    }
+    res.render("listings/index.ejs", { allListings });
 }
 
 module.exports.editFormListing = async (req, res) => {
@@ -78,14 +98,26 @@ module.exports.editFormListing = async (req, res) => {
 
 module.exports.updateListing = async (req, res) => {
     let { id } = req.params;
-    let listing = await Listing.findByIdAndUpdate(id, { ...req.body.Listing });
-    if (typeof req.file !== "undefined") {
-        let url = req.file.path;
-        let filename = req.file.filename;
-        listing.image = { url, filename };
+    let listing = await Listing.findById(id);
+    if (!listing) {
+        req.flash("error", "Listing not found.");
+        return res.redirect("/listings");
+    }
+    listing.title = req.body.Listing.title;
+    listing.price = req.body.Listing.price;
+    listing.location = req.body.Listing.location;
+    listing.country = req.body.Listing.country;
+    listing.category = req.body.Listing.category;
+    listing.description = req.body.Listing.description;
+
+    if (req.file) {
+        listing.image = {
+            url: req.file.path,
+            filename: req.file.filename
+        };
     }
 
-    //Geocoding code here
+    //Geocoding code 
     const query = listing.location;
     const URL = `https://api.maptiler.com/geocoding/${encodeURIComponent(query)}.json?key=${apiKey}`;
     try {
