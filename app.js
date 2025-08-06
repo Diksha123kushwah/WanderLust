@@ -83,9 +83,7 @@ app.use((req, res, next) => {
     res.locals.curr = req.user;
     next();
 })
-app.get("/", (req, res) => {
-    res.send("welcome");
-})
+
 //Sign Up
 app.use("/", userRouter);
 
