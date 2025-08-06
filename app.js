@@ -84,6 +84,10 @@ app.use((req, res, next) => {
     next();
 })
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
+
 //Sign Up
 app.use("/", userRouter);
 
