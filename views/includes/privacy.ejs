@@ -1,46 +1,126 @@
-✅ Privacy Policy (Sample)
-Effective Date: [Insert Date]
+<% layout("/layouts/boilerplate") %>
 
-This Privacy Policy explains how we collect, use, and protect your personal information when you use our platform for discovering and listing visiting or staying places.
+    <body>
+        <div class="container py-5">
+            <div class="text-center mb-4">
+                <h1 class="display-5 fw-bold">Privacy Policy</h1>
+                <hr class="w-25 mx-auto">
+            </div>
 
-1. Information We Collect
-We collect the following data when you use our platform:
+            <div class="accordion" id="privacyAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingIntro">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
+                            Introduction
+                        </button>
+                    </h2>
+                    <div id="collapseIntro" class="accordion-collapse collapse show" aria-labelledby="headingIntro"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Hello. We are ©WanderLust Private Limited. Here's how we protect your data and respect
+                                your privacy.</p>
+                        </div>
+                    </div>
+                </div>
 
-Account Information: Name, email, and password (encrypted).
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingRole">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
+                            Our role in your privacy
+                        </button>
+                    </h2>
+                    <div id="collapseRole" class="accordion-collapse collapse" aria-labelledby="headingRole"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>If you're a customer, user, or visitor — this policy applies to you.</p>
+                            <p>If you're just signing a contract or submitting something, check below for how we handle
+                                your data.</p>
+                        </div>
+                    </div>
+                </div>
 
-Listing Information: Title, price, location, category, and description of the places you submit.
-
-Reviews: Comments and ratings you provide.
-
-Location Data: We use geocoding services (e.g., MapTiler) to map your listed locations.
-
-Cookies and Sessions: Used to maintain your login session and improve user experience.
-
-2. How We Use Your Information
-To display listings and reviews.
-
-To allow users to sign up, log in, and manage their own listings.
-
-To provide map integration for better user navigation.
-
-To enable searching and filtering based on user preferences.
-
-For security and authentication using sessions and cookies.
-
-3. Sharing Your Information
-We do not sell your personal data. Your data may be shared with trusted services like geolocation APIs solely for functionality (e.g., displaying maps).
-
-4. Your Rights
-You can edit or delete your listings or reviews if you're the author.
-
-You can contact us to delete your account permanently.
-
-5. Data Security
-We implement security practices to protect your data, including encryption, access controls, and secure session management.
-
-6. Changes to Policy
-We may update this Privacy Policy occasionally. Changes will be reflected on this page with a new effective date.
-
-7. Contact Us
-For questions, email us at: [your-email@example.com]
-
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingRespon">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseRespon" aria-expanded="false" aria-controls="collapseRespon">
+                            Our responsibilities
+                        </button>
+                    </h2>
+                    <div id="collapseRespon" class="accordion-collapse collapse" aria-labelledby="headingRespon"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>We act as a data controller for the data you submit.</p>
+                            <p>We decide how and why your data is processed (e.g. for location, listings, etc.).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingUserRes">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseUserRes" aria-expanded="false" aria-controls="collapseUserRes">
+                            Your responsibilities
+                        </button>
+                    </h2>
+                    <div id="collapseUserRes" class="accordion-collapse collapse" aria-labelledby="headingUserRes"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Read this Privacy Policy carefully.</p>
+                            <p>Don't share other people's data unless you're authorized.</p>
+                            <p>If you provide info, you must have the right to do so.</p>
+                            <p>Follow all local data protection laws while using the app.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCook">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCook" aria-expanded="false" aria-controls="collapseCook">
+                            Cookies & Sessions
+                        </button>
+                    </h2>
+                    <div id="collapseCook" class="accordion-collapse collapse" aria-labelledby="headingCook"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Keeping you logged in</p>
+                            <p>Storing temporary form data</p>
+                            <p>Enhancing user experience (not for tracking you)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingLoc">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLoc" aria-expanded="false" aria-controls="collapseLoc">
+                            Location Data
+                        </button>
+                    </h2>
+                    <div id="collapseLoc" class="accordion-collapse collapse" aria-labelledby="headingLoc"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Your entered location is geocoded (converted into map coordinates).</p>
+                            <p>We only use this to show your listing on the map.</p>
+                            <p>No live location or tracking is done.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingContact">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseContact" aria-expanded="false" aria-controls="collapseContact">
+                            Contact Information
+                        </button>
+                    </h2>
+                    <div id="collapseContact" class="accordion-collapse collapse" aria-labelledby="headingContact"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>If you have any questions about this Privacy Policy, contact us at:
+                                <strong>wanderlust@2909gmail.com</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>

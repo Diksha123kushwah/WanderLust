@@ -1,71 +1,4 @@
 <% layout("/layouts/boilerplate") %>
-       <style>
-              #filters {
-                     display: flex;
-                     overflow-x: auto;
-                     scrollbar-width: none;
-                     /* Firefox */
-                     padding: 1rem 1rem;
-                     gap: 2rem;
-              }
-
-              #filters::-webkit-scrollbar {
-                     display: none;
-              }
-
-              .filter {
-                     text-decoration: none;
-                     color: rgb(31, 30, 30);
-                     text-align: center;
-                     white-space: nowrap;
-                     opacity: 0.7;
-                     transition: opacity 0.2s, transform 0.2s;
-              }
-
-              .filter:hover {
-                     opacity: 1;
-                     transform: scale(1.05);
-              }
-
-              .filter i {
-                     font-size: 20px;
-                     margin-bottom: 5px;
-              }
-
-              .filter p {
-                     margin: 0;
-                     font-size: 13px;
-                     font-weight: 500;
-              }
-
-              .filter-tax {
-                     display: flex;
-                     justify-content: space-between;
-                     align-items: center;
-                     border-bottom: 1px solid #e5e5e5;
-                     padding: 0 1rem;
-                     background-color: white;
-                     z-index: 1000;
-              }
-
-              .tax-toggle {
-                     min-width: 250px;
-                     padding-left: 1rem;
-              }
-
-              .form-switch label {
-                     font-size: 14px;
-                     font-weight: 500;
-              }
-
-              .listing-page {
-                     font-family: 'Plus Jakarta Sans', sans-serif;
-              }
-
-              .tax-info {
-                     display: none;
-              }
-       </style>
 
        <body class="listing-page">
               <div class="filter-tax">
@@ -139,6 +72,8 @@
                                    <p>Architectural Gems</p>
                             </a>
                      </div>
+                     <div class="sideArrow"><i class="fa-solid fa-circle-arrow-right"></i></div>
+                     <div class="drop"><i class="fa-solid fa-circle-chevron-down"></i></div>
                      <div class="tax-toggle">
                             <div class="form-check-reverse form-switch">
                                    <input class="form-check-input" type="checkbox" role="switch"
@@ -151,7 +86,7 @@
               <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 wrap-List">
                      <% for(let listing of allListings){ %>
                             <a href="/listings/<%=listing._id%>" class="cardLink">
-                                   <div class="card col" style="width: 22rem;">
+                                   <div class="card col">
                                           <img src="<%=listing.image.url%>" class="card-img-top" alt="Listing_image"
                                                  style="height: 20rem;">
                                           <div class="card-img-overlay"></div>
@@ -177,9 +112,9 @@
               taxToggle.addEventListener("click", (event) => {
                      let taxInfo = document.getElementsByClassName("tax-info");
                      for (const element of taxInfo) {
-                            if(element.style.display != "inline"){
+                            if (element.style.display != "inline") {
                                    element.style.display = "inline";
-                            } else{
+                            } else {
                                    element.style.display = "none";
                             }
                      }

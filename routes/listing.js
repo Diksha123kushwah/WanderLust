@@ -21,6 +21,11 @@ router.get("/category/:categoryName", wrapAsync(listingController.filterListing)
 //Search 
 router.get("/search", wrapAsync(listingController.searchListing));
 
+//Privacy
+router.get("/privacy",wrapAsync(listingController.privacy));
+
+//Terms
+router.get("/terms",wrapAsync(listingController.terms));
 
 router
     .route("/:id")

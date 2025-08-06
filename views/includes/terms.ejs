@@ -1,48 +1,122 @@
-✅ Terms & Conditions (Sample)
-Effective Date: [Insert Date]
+<% layout("/layouts/boilerplate") %>
 
-By using our platform, you agree to the following terms and conditions:
+    <body>
+        <div class="container py-5">
+            <div class="text-center mb-4">
+                <h1 class="display-5 fw-bold">Terms and Conditions – © WanderLust Private Limited</h1>
+                <hr class="w-250 mx-auto">
+            </div>
 
-1. Account Usage
-You must be at least 13 years old to use this platform.
+            <div class="accordion" id="privacyAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingIntro">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseIntro" aria-expanded="true" aria-controls="collapseIntro">
+                            Introduction
+                        </button>
+                    </h2>
+                    <div id="collapseIntro" class="accordion-collapse collapse show" aria-labelledby="headingIntro"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Welcome to WanderLust. These Terms and Conditions ("Terms") govern your use of our website and services.</p>
+                            <p>By accessing or using the site, you agree to be bound by these Terms.</p>
+                        </div>
+                    </div>
+                </div>
 
-You are responsible for maintaining the security of your account.
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingRole">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseRole" aria-expanded="false" aria-controls="collapseRole">
+                            Eligibility
+                        </button>
+                    </h2>
+                    <div id="collapseRole" class="accordion-collapse collapse" aria-labelledby="headingRole"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>You must be at least 13 years old to use this website.</p>
+                            <p>If you're under 18, use the website with parental consent.</p>
+                        </div>
+                    </div>
+                </div>
 
-2. Listings & Reviews
-You can post listings and reviews only if you are logged in.
-
-You may only edit or delete listings/reviews that you have created.
-
-Any inappropriate, offensive, or false content is strictly prohibited and may result in removal or account suspension.
-
-3. Acceptable Use
-You agree not to:
-
-Attempt to gain unauthorized access to the site or its data.
-
-Misuse the map or geolocation data.
-
-Upload harmful files or scripts.
-
-4. Intellectual Property
-The content you upload remains yours, but by submitting it, you grant us permission to display it publicly.
-
-The platform’s design, code, and features are protected by copyright.
-
-5. Limitation of Liability
-We do our best to provide accurate and functional services but do not guarantee perfection. We are not responsible for:
-
-Mistakes in listings or reviews.
-
-Map/geolocation errors.
-
-Downtime or data loss.
-
-6. Termination
-We reserve the right to suspend or delete your account for any violation of these terms.
-
-7. Changes to Terms
-We may update these terms. Continued use after changes means you accept them.
-
-8. Contact
-If you have any concerns or questions, email us at: [your-email@example.com]
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingRespon">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseRespon" aria-expanded="false" aria-controls="collapseRespon">
+                            User Responsibilities
+                        </button>
+                    </h2>
+                    <div id="collapseRespon" class="accordion-collapse collapse" aria-labelledby="headingRespon"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>You are responsible for the accuracy of any information (like listings, reviews, location) you submit.</p>
+                            <p>You agree not to: Post false, harmful, or illegal content and attempt unauthorized access or data scraping.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingUserRes">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseUserRes" aria-expanded="false" aria-controls="collapseUserRes">
+                            Listings and Reviews
+                        </button>
+                    </h2>
+                    <div id="collapseUserRes" class="accordion-collapse collapse" aria-labelledby="headingUserRes"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Only the owner/author of a listing or review may edit or delete it.</p>
+                            <p>We reserve the right to remove listings or content that violates our policies.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingCook">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseCook" aria-expanded="false" aria-controls="collapseCook">
+                            Location & Maps
+                        </button>
+                    </h2>
+                    <div id="collapseCook" class="accordion-collapse collapse" aria-labelledby="headingCook"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>You must enter accurate location info.</p>
+                            <p>We use third-party APIs (like MapTiler) to convert location into map coordinates.</p>
+                            <p>We do not track your live location.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingLoc">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseLoc" aria-expanded="false" aria-controls="collapseLoc">
+                            Privacy & Data
+                        </button>
+                    </h2>
+                    <div id="collapseLoc" class="accordion-collapse collapse" aria-labelledby="headingLoc"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>Your use is also governed by our Privacy Policy.</p>
+                            <p>We use cookies and sessions for login and form security purposes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingContact">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseContact" aria-expanded="false" aria-controls="collapseContact">
+                            Contact Information
+                        </button>
+                    </h2>
+                    <div id="collapseContact" class="accordion-collapse collapse" aria-labelledby="headingContact"
+                        data-bs-parent="#privacyAccordion">
+                        <div class="accordion-body">
+                            <p>If you have any questions about this Privacy Policy, contact us at:
+                                <strong>wanderlust@2909gmail.com</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>

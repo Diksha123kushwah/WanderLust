@@ -15,6 +15,7 @@ const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
 const passport = require("passport");
 const localStrategy = require("passport-local");
@@ -23,10 +24,24 @@ const apiKeyRoute = require("./routes/listing.js");
 
 
 
-const mongooseUrl = "mongodb://127.0.0.1:27017/wanderlust";
+// const mongooseUrl = "mongodb://127.0.0.1:27017/wanderlust";
+const dbURL = process.env.MONGO_ATLAS_URL;
+
+const store = MongoStore.create({
+    mongoUrl: dbURL,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 3600,
+});
+
+store.on("error", () => {
+    console.log("ERROR in MONGO SESSION STORE", err);
+})
 
 const sessionOptions = {
-    secret: "mysecretcode",
+    store,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -51,14 +66,16 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+async function main() {
+    await mongoose.connect(dbURL);
+}
+
 main().then(() => {
     console.log("Connection Successfull");
 }).catch((err) => {
     console.log(err);
 })
-async function main() {
-    await mongoose.connect(mongooseUrl);
-}
+
 
 app.use((req, res, next) => {
     res.locals.success = req.flash("success");
@@ -66,6 +83,11 @@ app.use((req, res, next) => {
     res.locals.curr = req.user;
     next();
 })
+app.get("/", (req, res) => {
+    res.send("welcome");
+})
+//Sign Up
+app.use("/", userRouter);
 
 //Listings Route
 app.use("/listings", listingRouter);
@@ -73,13 +95,11 @@ app.use("/listings", listingRouter);
 //Reviews Route
 app.use("/listings/:id/review", reviewRouter);
 
-//Sign Up
-app.use("/", userRouter);
 
-//due to error 
-app.use("/.well-known", (req, res) => {
-    res.status(204).end(); // No Content
-});
+// //due to error 
+// app.use("/.well-known", (req, res) => {
+//     res.status(204).end(); // No Content
+// });
 
 // for all other routs
 app.all("*", (req, res, next) => {

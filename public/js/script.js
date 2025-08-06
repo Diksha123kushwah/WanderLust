@@ -17,3 +17,12 @@
     }, false)
   })
 })()
+
+
+//Dropdown filters 
+// let drops = document.getElementsByClassName("drop");
+// for (const drop of drops) {
+//   drop.addEventListener("click",(event)=>{
+     
+//   })
+// }
