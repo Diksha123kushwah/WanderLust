@@ -1,286 +1,328 @@
 body {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
-    flex: 1;
+  flex: 1;
 }
 
 .fa-compass {
-    color: #fe424d;
-    font-size: 2rem;
+  color: #fe424d;
+  font-size: 2rem;
 }
 
 .nav-link {
-    color: #222222;
+  color: #222222;
 }
 
 .navbar {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    height: 5rem;
-    z-index: 2;
+  position: sticky;
+  top: 0;
+  background-color: white;
+  height: 5rem;
+  z-index: 20;
 }
 
 .f-info {
-    height: 8rem;
-    background-color: #ebebeb;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+  height: 8rem;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .f-link a {
-    text-decoration: none;
-    color: #222222;
+  text-decoration: none;
+  color: #222222;
 }
 
 .f-link a:hover {
-    text-decoration: underline;
-    color: #222222;
+  text-decoration: underline;
+  color: #222222;
 }
 
 .f-social-info i {
-    font-size: 1.2rem;
-    margin-right: 0.5rem;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
 }
 
 .social-info {
-    text-decoration: none;
-    color: #222222;
+  text-decoration: none;
+  color: #222222;
 }
 
 .card {
-    width: 22rem;
-    border: none;
-    margin-bottom: 2rem;
+  width: 22rem;
+  border: none;
+  margin-bottom: 2rem;
 }
 
 .card-img-top {
-    border-radius: 1rem;
-    width: 100%;
-    object-fit: cover;
+  border-radius: 1rem;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
 }
 
 .card-text {
-    font-weight: 400;
-    font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .cardLink {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .card-img-overlay {
-    opacity: 0;
+  opacity: 0;
 }
 
 .card-img-overlay:hover {
-    opacity: 0.2;
-    background-color: white;
+  opacity: 0.2;
+  background-color: white;
 }
 
 .btn-dark {
-    background-color: #fe424d;
-    border: none;
+  background-color: #fe424d;
+  border: none;
 }
 
 .show-img {
-    height: 30vh;
-    border-radius: 1.2rem;
+  height: 30vh;
+  border-radius: 1.2rem;
 }
 
 .btns {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
 .show-Listing {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 /* MAP */
 #map {
-    height: 400px;
-    width: 85vh;
+  height: 400px;
+  width: 50vw;
 }
 
 .btn-search {
-    background-color: #fe424d;
-    color: white;
-    margin: 0 1rem 0 1rem;
+  background-color: #fe424d;
+  color: white;
+  margin: 0 1rem 0 1rem;
 }
 
 .btn-search i {
-    display: inline;
-    margin-right: 0.6rem;
+  display: inline;
+  margin-right: 0.6rem;
 }
 
 .btn-search:hover {
-    background-color: #fe424d;
-    color: white;
+  background-color: #fe424d;
+  color: white;
 }
 
 .search input {
-    max-width: 30rem;
+  max-width: 30rem;
 }
 
 #filters {
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding: 1rem 1rem;
-    gap: 2rem;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 1rem 1rem;
+  gap: 2rem;
 }
 
 #filters::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .filter {
-    text-decoration: none;
-    color: rgb(31, 30, 30);
-    text-align: center;
-    white-space: nowrap;
-    opacity: 0.7;
-    transition: opacity 0.2s, transform 0.2s;
+  text-decoration: none;
+  color: rgb(31, 30, 30);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .filter:hover {
-    opacity: 1;
-    transform: scale(1.05);
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 .filter i {
-    font-size: 20px;
-    margin-bottom: 5px;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .filter p {
-    margin: 0;
-    font-size: 13px;
-    font-weight: 500;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
 }
 
 .filter-tax {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 0 1rem;
-    background-color: white;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 1rem;
+  background-color: white;
+  z-index: 1000;
 }
 
 .tax-toggle {
-    min-width: 250px;
-    padding-left: 1rem;
+  min-width: 250px;
+  padding-left: 1rem;
 }
 
 .form-switch label {
-    font-size: 14px;
-    font-weight: 500;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .listing-page {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .tax-info {
-    display: none;
+  display: none;
 }
-.drop{
-    display: none;
-    font-size: 1.6rem;
-    color: #fe424d;
+.drop {
+  display: none;
+  font-size: 1.6rem;
+  color: #fe424d;
 }
-.sideArrow i{
-    font-size: 1.6rem;
-    color: #fe424d;
+.sideArrow i {
+  font-size: 1.6rem;
+  color: #fe424d;
 }
 
 @media (max-width: 1200px) {
-    .listing-page .wrap-List {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
+  .listing-page .wrap-List {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+.wrap-List .cardLink{
+    align-self: center;
+}
+  .search {
+    width: 18rem;
+  }
 
-    .search {
-        width: 18rem;
-    }
+  .search input {
+    width: 8rem;
+    font-size: 0.8rem;
+  }
 
-    .search input {
-        width: 8rem;
-        font-size: 0.8rem;
-    }
+  .search input::placeholder {
+    font-size: 0.7rem;
+  }
 
-    .search input::placeholder {
-        font-size: 0.7rem;
-    }
-
-    .btn-search {
-        width: 6rem;
-        font-size: 0.7rem;
-    }
+  .btn-search {
+    width: 6rem;
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 900px) {
-    .card {
-        width: 18rem;
-    }
-    .drop{
-        display: inline;
-    }
-    .sideArrow{
-        display: none;
-    }
-    #filters{
-        display: none;
-    }
-    .filter-tax{
-        margin: 2rem;
-        border: none;
-        padding: 0;
-        margin-left: 0.2rem;
-        margin-right: 0.2rem;
-    }
-
+  .card {
+    width: 18rem;
+  }
+  .drop {
+    display: inline;
+  }
+  .sideArrow {
+    display: none;
+  }
+  #filters {
+    display: none;
+  }
+  .filter-tax {
+    margin: 2rem;
+    border: none;
+    padding: 0;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+  }
+  #map {
+    height: 350px;
+    width: 50vw;
+  }
 }
 
 @media (max-width: 770px) {
-    .show-page .btns {
-        flex-direction: column;
-        gap: 1.2rem;
-    }
+  .show-page .btns {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
 }
 
 @media (max-width: 767.98px) {
-    .navbar-collapse form {
-        width: 100%;
-    }
+  .navbar-collapse form {
+    width: 100%;
+  }
 
-    .navbar .form-control {
-        margin-bottom: 0.5rem;
-    }
+  .navbar .form-control {
+    margin-bottom: 0.5rem;
+  }
 
-    .navbar form {
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .navbar form {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    .navbar .btn-search {
-        width: 100%;
-    }
+  .navbar .btn-search {
+    width: 100%;
+  }
+  .card {
+    width: 15rem;
+  }
+  .card-img-top {
+    height: 16rem;
+  }
 }
 
+@media (max-width: 540px) {
+  .card {
+    width: 12rem;
+  }
+  .card-img-top {
+    height: 14rem;
+  }
+}
+@media (max-width: 440px) {
+  .card {
+    width: 10rem;
+  }
+  .card-img-top {
+    height: 12rem;
+  }
+}
+@media (max-width: 372px) {
+  .card {
+    width: 8rem;
+  }
+  .card-img-top {
+    height: 10rem;
+  }
+}
+@media (max-width: 307px) {
+  .listing-page .wrap-List {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card {
+    width: 12rem;
+  }
 /* &#x20b9;<%=listing.price.toLocaleString("en-IN")%> */

@@ -1,16 +1,37 @@
 <% layout("/layouts/boilerplate") %>
     <script>
         let Access_Token = "<%=process.env.MAP_TOKEN%>";
-        let coordinatesL = <%-JSON.stringify(listing.geometry.coordinates)%>;
-        let locationInfo = <%-JSON.stringify(listing.location)%>;
+        let coordinatesL = <% -JSON.stringify(listing.geometry.coordinates) %>;
+        let locationInfo = <% -JSON.stringify(listing.location) %>;
     </script>
+    <style>
+        .card2 {
+            width: 36rem;
+        }
+
+        @media (max-width: 970px) {
+            .card2 {
+                width: 30rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .card2 {
+                width: 24rem;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 
     <body class="show-page">
         <div class="row mt-4 mt-2 show-Listing">
-            <h2 class="col-8 offset-3">
+            <h2 class="col-8 offset-3 title">
                 <%=listing.title %>
             </h2>
-            <div class="card col-6 offset-3" style="width: 36rem">
+            <div class="card card2 col-6 offset-3">
                 <img class="show-img" src="<%=listing.image.url%>" alt="Listing_Img">
                 <div class="card-body">
                     <div class="card-text mb-2">
