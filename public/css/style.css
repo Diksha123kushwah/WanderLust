@@ -213,9 +213,6 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-.wrap-List .cardLink{
-    align-self: center;
-}
   .search {
     width: 18rem;
   }
@@ -266,6 +263,9 @@ body {
     flex-direction: column;
     gap: 1.2rem;
   }
+  .card-img-top {
+    height: 19rem;
+  }
 }
 
 @media (max-width: 767.98px) {
@@ -291,6 +291,9 @@ body {
   .card-img-top {
     height: 16rem;
   }
+  .card-text {
+    font-size: 0.81rem;
+  }
 }
 
 @media (max-width: 540px) {
@@ -300,6 +303,9 @@ body {
   .card-img-top {
     height: 14rem;
   }
+  .card-text {
+    font-size: 0.7rem;
+  }
 }
 @media (max-width: 440px) {
   .card {
@@ -307,6 +313,9 @@ body {
   }
   .card-img-top {
     height: 12rem;
+  }
+  .card-text {
+    font-size: 0.62rem;
   }
 }
 @media (max-width: 372px) {
