@@ -19,9 +19,38 @@
             .card2 {
                 width: 24rem;
             }
-
             .title {
                 font-size: 1.5rem;
+            }
+        }
+        @media(max-width: 540px){
+            .card2{
+                width: 18rem;
+            }
+        }
+        @media(max-width: 440px){
+            .title{
+                font-size: 1.2rem;
+            }
+        }
+        @media(max-width: 378px){
+             .card2{
+                width: 15rem;
+            }
+            .title{
+                font-size: 1rem;
+            }
+        }
+        @media(max-width: 330px){
+             .card2{
+                width: 12rem;
+            }
+            .title{
+                font-size: 0.6rem;
+            }
+            #map{
+                width:50vw;
+                height:auto;
             }
         }
     </style>
@@ -44,10 +73,10 @@
                     <% if(curr && curr._id.equals(listing.owner._id)){%>
                         <div class="btns mt-4">
                             <form action="/listings/<%=listing._id%>/edit" method="get">
-                                <button class="btn btn-dark">Edit Listing</button>
+                                <button class="btn btn-dark res-btn">Edit Listing</button>
                             </form>
                             <form action="/listings/<%=listing._id%>?_method=DELETE" method="post">
-                                <button class="btn btn-dark">Delete Listing</button>
+                                <button class="btn btn-dark res-btn">Delete Listing</button>
                             </form>
                         </div>
                         <%}%>
@@ -83,7 +112,7 @@
                             <div class="invalid-feedback">Please add some comment to submit</div>
                         </div>
                         <div class="mt-2 mb-2">
-                            <button class="btn btn-outline-dark">Submit</button>
+                            <button class="btn btn-outline-dark res-btn">Submit</button>
                         </div>
                     </form>
                 </div>
@@ -108,7 +137,7 @@
                                                 action="/listings/<%=listing._id%>/review/<%=review._id%>?_method=DELETE"
                                                 method="post">
                                                 <% if(curr && curr._id.equals(review.author._id)){%>
-                                                    <button class="btn btn-outline-danger">Delete</button>
+                                                    <button class="btn btn-outline-danger res-btn">Delete</button>
                                                     <%}%>
                                             </form>
                                         </div>
