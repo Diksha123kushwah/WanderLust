@@ -1,8 +1,8 @@
 <% layout("/layouts/boilerplate") %>
     <script>
         let Access_Token = "<%=process.env.MAP_TOKEN%>";
-        let coordinatesL = <% -JSON.stringify(listing.geometry.coordinates) %>;
-        let locationInfo = <% -JSON.stringify(listing.location) %>;
+        let coordinatesL = <%-JSON.stringify(listing.geometry.coordinates) %>;
+        let locationInfo = <%-JSON.stringify(listing.location) %>;
     </script>
     <style>
         .card2 {
