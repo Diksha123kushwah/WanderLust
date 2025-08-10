@@ -18,11 +18,41 @@
   })
 })()
 
+let editBtns = document.getElementsByClassName("editBtn");
+let matchMedia = window.matchMedia("(max-width: 600px)");
+let updateBtn = (e) => {
+  for (const editBtn of editBtns) {
+    if (e.matches) {
+      editBtn.textContent = "Edit";
+    } else {
+      editBtn.textContent = "Edit Listing";
+    }
+  }
+}
+updateBtn(matchMedia);
+matchMedia.addEventListener("change", (updateBtn));
 
-//Dropdown filters 
-// let drops = document.getElementsByClassName("drop");
-// for (const drop of drops) {
-//   drop.addEventListener("click",(event)=>{
-     
-//   })
-// }
+let delBtns = document.getElementsByClassName("delBtn");
+let updateDelBtn = (e) => {
+  for (const delBtn of delBtns) {
+    if (e.matches) {
+      delBtn.textContent = "Delete";
+    } else {
+      delBtn.textContent = "Delete Listing";
+    }
+  }
+}
+updateDelBtn(matchMedia);
+matchMedia.addEventListener("change", (updateDelBtn));
+
+const menuToggle = document.getElementById("menuToggle");
+const menuOverlay = document.getElementById("menuOverlay");
+const closeMenu = document.getElementById("closeMenu");
+
+menuToggle.addEventListener("click", () => {
+  menuOverlay.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+  menuOverlay.classList.remove("active");
+});

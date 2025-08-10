@@ -2,10 +2,8 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    
+    <button class="hamburger d-md-none" id="menuToggle">&#9776</button>
+
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
@@ -31,3 +29,17 @@
     </div>
   </div>
 </nav>
+
+<div id="menuOverlay" class="menu-overlay">
+  <div class="menu-content">
+      <button class="close-btn" id="closeMenu">&times;</button>
+    <a class="nav-link" href="/listings">Explore</a>
+    <a class="nav-link" href="/listings/new">Become a host</a>
+    <% if (!curr) { %>
+      <a class="nav-link" href="/signup"><b>Sign up</b></a>
+      <a class="nav-link" href="/login"><b>Log in</b></a>
+      <% } else { %>
+        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <% } %>
+  </div>
+</div>
