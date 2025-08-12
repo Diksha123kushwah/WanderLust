@@ -8,126 +8,111 @@
         .card2 {
             width: 36rem;
         }
-
         @media (max-width: 970px) {
             .card2 {
                 width: 30rem;
             }
         }
-
         @media (max-width: 768px) {
             .card2 {
                 width: 24rem;
             }
-
             .title {
                 font-size: 1.5rem;
             }
         }
-
         @media(max-width: 540px) {
             .card2 {
-                width: 18rem;
+                width: 20rem;
             }
         }
-
         @media(max-width: 440px) {
             .title {
                 font-size: 1.2rem;
             }
-
             .f-social-info i {
                 font-size: 0.95rem;
                 margin-right: 0.4rem;
             }
-
             .footHead {
                 font-size: 0.75rem;
             }
         }
-
         @media(max-width: 378px) {
             .card2 {
-                width: 15rem;
+                width: 16rem;
             }
-
             .title {
                 font-size: 1rem;
             }
-
             .f-social-info i {
                 font-size: 0.9rem;
                 margin-right: 0.38rem;
             }
-
             .footHead {
                 font-size: 0.7rem;
             }
         }
-
         @media(max-width: 330px) {
             .card2 {
-                width: 12rem;
+                width: 14rem;
             }
-
             .title {
                 font-size: 0.8rem;
             }
-
             .revHead {
                 font-size: 0.8rem;
             }
-
             .ratHead {
                 font-size: 0.6rem;
             }
-
             #map {
-                width: 50vw;
-                height: auto;
+                height: 190px;
+                width: 80vw;
             }
-
             .f-social-info i {
                 font-size: 0.8rem;
                 margin-right: 0.35rem;
             }
-
             .footHead {
                 font-size: 0.75rem;
             }
         }
-
         @media(max-width: 310px) {
             .card2 {
-                width: 12rem;
+                width: 13rem;
             }
-
             .title {
-                font-size: 0.6rem;
+                font-size: 0.9rem;
             }
-
             #map {
-                width: 50vw;
-                height: auto;
+                height: 160px;
+                width: 80vw;
             }
-
             .f-social-info i {
                 font-size: 0.7rem;
                 margin-right: 0.3rem;
             }
-
             .footHead {
+                font-size: 0.7rem;
+            }
+        }
+         @media(max-width: 250px) {
+            .card2 {
+                width: 11rem;
+            }
+            .title {
                 font-size: 0.7rem;
             }
         }
     </style>
 
     <body class="show-page">
-        <div class="row mt-4 mt-2 show-Listing">
-            <h2 class="col-8 offset-3 title">
+        <div class="mt-4 mb-2 show-Listing">
+            <h2 class="title col-10 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                 <%=listing.title %>
             </h2>
-            <div class="card card2 col-6 offset-3">
+            <div class="card card2 col-10 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
                 <img class="show-img" src="<%=listing.image.url%>" alt="Listing_Img">
                 <div class="card-body">
                     <div class="card-text mb-2">
@@ -151,7 +136,7 @@
             </div>
             <% if(curr){%>
                 <hr>
-                <div class="offset-3 col-8 mb-3">
+                <div class="col-10 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mb-3">
                     <h4 class="revHead">Leave a Review</h4>
                     <form action="/listings/<%=listing._id%>/review" method="post" novalidate class="needs-validation">
                         <div class="mt-2 mb-2">
@@ -187,7 +172,7 @@
 
                     <%if(listing.reviews.length> 0){%>
                         <hr>
-                        <div class="offset-3 col-8 mb-3">
+                        <div class="col-10 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mb-3">
                             <h4 class="revHead">All Reviews</h4>
                             <div class="row">
                                 <% for(review of listing.reviews){%>
@@ -215,9 +200,9 @@
                             </div>
                         </div>
                         <%}%>
-
                             <hr>
-                            <div class="offset-3 col-8 mb-3">
+                            <div
+                                class="col-10 offset-1 col-sm-10 offset-sm-2 col-md-8 offset-md-2 col-lg-6 offset-lg-3 mb-3">
                                 <h4 class="revHead">Where you'll be</h4>
                                 <div id="map"></div>
                             </div>
