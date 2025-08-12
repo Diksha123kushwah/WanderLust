@@ -152,6 +152,54 @@ body {
   min-width: 250px;
   padding-left: 1rem;
 }
+#filters1 {
+  display: none;
+}
+.menu-overlayFil {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: white;
+  transition: left 0.4s ease-in-out;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+
+.menu-overlayFil.activeFil {
+  left: 0; /* Slides into view */
+}
+.menu-overlayFil.activeFil #filters1 {
+  display: block;
+}
+.menu-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+.close-btnFil {
+  position: absolute;
+  top: 15px;
+  right: 20px; /* inside panel, not full screen */
+  font-size: 30px;
+  background: none;
+  color: #fe424d;
+  border: none;
+  cursor: pointer;
+}
+
 .form-switch label {
   font-size: 14px;
   font-weight: 500;
@@ -166,6 +214,9 @@ body {
   display: none;
   font-size: 1.6rem;
   color: #fe424d;
+  cursor: pointer;
+  background-color: none;
+  border: none;
 }
 .sideArrow i {
   font-size: 1.6rem;
@@ -179,7 +230,7 @@ body {
   cursor: pointer;
 }
 .menu-overlay {
-   position: fixed;
+  position: fixed;
   top: -100%;
   left: 0;
   width: 100%;
@@ -207,7 +258,7 @@ body {
   right: 20px;
   font-size: 30px;
   background: none;
-    color: #fe424d;
+  color: #fe424d;
   border: none;
   cursor: pointer;
 }
@@ -244,6 +295,27 @@ body {
   #filters {
     display: none;
   }
+  .filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .filter i {
+    font-size: 18px;
+    color: #fe424d;
+  }
+
+  .filter:hover {
+    background: #f8f8f8;
+    transform: translateX(3px);
+  }
+
   .filter-tax {
     margin: 2rem;
     border: none;
@@ -306,7 +378,6 @@ body {
   }
 }
 
-
 @media (max-width: 540px) {
   .card {
     width: 12rem;
@@ -328,7 +399,7 @@ body {
     font-size: 1rem;
     margin-right: 0.48rem;
   }
-  .footHead{
+  .footHead {
     font-size: 0.9rem;
   }
 }

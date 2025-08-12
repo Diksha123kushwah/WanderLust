@@ -56,3 +56,14 @@ menuToggle.addEventListener("click", () => {
 closeMenu.addEventListener("click", () => {
   menuOverlay.classList.remove("active");
 });
+const menuToggleFil = document.getElementById("menuToggleFil");
+const menuOverlayFil = document.getElementById("menuOverlayFil");
+const closeMenuFil = document.getElementById("closeMenuFil");
+
+menuToggleFil.addEventListener("click", () => {
+  menuOverlayFil.classList.add("activeFil");
+});
+
+closeMenuFil.addEventListener("click", () => {
+  menuOverlayFil.classList.remove("activeFil");
+});
